@@ -18,7 +18,9 @@ public class WebAppInterface {
     @JavascriptInterface
     public String getLayoutConfig() {
         SharedPreferences prefs = mContext.getSharedPreferences("com.example.demo", Context.MODE_PRIVATE);
-        return prefs.getString("Config", "");
+        String config = prefs.getString("Config", "");
+        Log.i("getLayoutConfig", config);
+        return config;
     }
 
     /** receive the event from web action */
